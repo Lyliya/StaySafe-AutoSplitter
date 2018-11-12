@@ -6,7 +6,7 @@
 state("StaySafe")
 {
 	uint lvl : "mono.dll", 0x00264110, 0x6A0, 0x10, 0x3F0, 0x340, 0xB4;
-	uint load : "mono.dll", 0x00264110, 0x388, 0x38, 0x130, 0x488, 0x7E8;
+	uint load : "UnityPlayer.dll", 0x014EB5B0, 0x1B0, 0x18, 0xF8, 0x280, 0x28;
 }
 
 init
@@ -32,6 +32,10 @@ start
 		return true;
 	}
 	else if (current.lvl == 50 && current.load == 1) // Start World 3 (3.1)
+	{
+		return true;
+	}
+	else if (current.lvl == 20 && current.load == 1) // Start Secret World 1 (1.21)
 	{
 		return true;
 	}
